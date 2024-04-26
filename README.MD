@@ -11,3 +11,7 @@ As APIs RESTful são populares devido à sua simplicidade, flexibilidade e facil
 ```
 
 **Fonte: CHATGPT 3.5**
+
+## O que é Serializers
+
+![alt text](image.png)
