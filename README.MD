@@ -1,4 +1,4 @@
-# Protocolo REST API - BRANCH FEATURE
+# Protocolo REST API - BRANCH Tests-Units
 
 ## REST API 
 
@@ -11,3 +11,7 @@ As APIs RESTful são populares devido à sua simplicidade, flexibilidade e facil
 ```
 
 **Fonte: CHATGPT 3.5**
+
+## O que é Serializers
+
+![alt text](image.png)
