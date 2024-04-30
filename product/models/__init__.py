@@ -1,2 +1,5 @@
-from product.models.product import Product
-from product.models.category import Category
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+from .category import Category
+from .product import Product
