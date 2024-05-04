@@ -35,8 +35,10 @@ class TestOrderViewSet(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
         order_data = json.loads(response.content)
-        if order_data and 'results' in order_data and order_data['results']:  # Verifica se 'results' existe e não está vazio
-            product_data = order_data['results'][0]["product"][0]
+        if (
+            order_data and "results" in order_data and order_data["results"]
+        ):  # Verifica se 'results' existe e não está vazio
+            product_data = order_data["results"][0]["product"][0]
 
         self.assertEqual(product_data["title"], self.product.title)
         self.assertEqual(product_data["price"], self.product.price)
@@ -49,7 +51,7 @@ class TestOrderViewSet(APITestCase):
         data = json.dumps({"products_id": [product.id], "user": user.id})
 
         token = Token.objects.create(user=user)
-        self.client.credentials(HTTP_AUTHORIZATION=f'Token {token}')
+        self.client.credentials(HTTP_AUTHORIZATION=f"Token {token}")
 
         response = self.client.post(
             reverse("order-list", kwargs={"version": "v1"}),
