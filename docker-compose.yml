@@ -3,6 +3,8 @@ services:
     image: postgres:13.0-alpine
     ports:
       - 5432:5432
+    networks:
+      - backend
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
@@ -18,8 +20,14 @@ services:
       - 8000:8000
     env_file:
       - ./env.dev
+    networks:
+      - backend
     depends_on:
       - db
+
+networks:
+    backend:
+      driver: bridge
 
 volumes:
   postgres_data:
