@@ -18,6 +18,24 @@ As APIs RESTful são populares devido à sua simplicidade, flexibilidade e facil
 
 # Docker 
 
+## Create image
+
+
+**Criar image**
+```cmd
+docker build -t bookstore:latest .
+```
+
+**Atualizar image**
+```cmd
+docker-compose up --build
+```
+
+**Conectar base de dados**
+```cmd
+docker exec -it bookstore-db-1 psql -U bookstore_dev -d bookstore_dev_db
+```
+
 ## Docker network
 
 - Bridge
@@ -35,3 +53,4 @@ docker run: Inicia um novo contêiner.
 alpine: O nome da imagem que será usada para iniciar o contêiner.
 ash: O comando ou processo a ser executado dentro do contêiner. Neste caso, usamos o shell Ash, que é o shell padrão no Alpine Linux.
 ```
+

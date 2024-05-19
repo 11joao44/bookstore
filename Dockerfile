@@ -1,7 +1,7 @@
 # `python-base` sets up all our shared environment variables
 FROM python:3.12.2-slim as python-base
 
-# python
+    # python
 ENV PYTHONUNBUFFERED=1 \
     # prevents python creating .pyc files
     PYTHONDONTWRITEBYTECODE=1 \
@@ -27,6 +27,7 @@ ENV PYTHONUNBUFFERED=1 \
     PYSETUP_PATH="/opt/pysetup" \
     VENV_PATH="/opt/pysetup/.venv"
 
+
 # prepend poetry and venv to path
 ENV PATH="$POETRY_HOME/bin:$VENV_PATH/bin:$PATH"
 
@@ -42,19 +43,23 @@ RUN pip install poetry
 
 RUN apt-get update \
     && apt-get -y install libpq-dev gcc \
-    && poetry config virtualenvs.create false
+    && pip install psycopg2
 
-# copy project files
-WORKDIR /opt/pysetup
-COPY poetry.lock pyproject.toml /opt/pysetup/
+# copy project requirement files here to ensure they will be cached.
+WORKDIR $PYSETUP_PATH
+COPY poetry.lock pyproject.toml ./
 
-# install dependencies
+# install runtime deps - uses $POETRY_VIRTUALENVS_IN_PROJECT internally
+RUN poetry install --no-dev
+
+# quicker install as runtime deps are already installed
 RUN poetry install
 
 WORKDIR /app
+
 COPY . /app/
 
 EXPOSE 8000
 
-# Comando para ativar o ambiente virtual e iniciar o servidor Django
-CMD ["/bin/bash", "-c", "source /opt/pysetup/.venv/bin/activate && python manage.py runserver localhost:8000/bookstore/v1/product/"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+
