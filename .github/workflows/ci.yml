@@ -41,11 +41,11 @@ jobs:
         poetry install
 
     - name: Set DJANGO_SETTINGS_MODULE environment variable
-      run: echo "DJANGO_SETTINGS_MODULE=seu_projeto.settings" >> $GITHUB_ENV
+      run: echo "DJANGO_SETTINGS_MODULE=bookstore.settings" >> $GITHUB_ENV
 
     - name: Set PostgreSQL environment variables
       run: |
-        echo "DATABASE_URL=postgres://postgres:postgres@localhost:5432/test_db" >> $GITHUB_ENV
+        echo "DATABASE_URL=postgres://postgres:postgres@localhost:5432/bookstore_dev_db" >> $GITHUB_ENV
 
     - name: Run migrations
       run: |
