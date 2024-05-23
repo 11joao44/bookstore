@@ -27,7 +27,7 @@ DEBUG = True
 
 DEFAULT_CHARSET = 'utf-8'
 
-ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['bookstore-iota-ten.vercel.app', '127.0.0.1', 'localhost']
 
 # Application definition
 
