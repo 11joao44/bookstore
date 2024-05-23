@@ -37,3 +37,9 @@ ash: O comando ou processo a ser executado dentro do contêiner. Neste caso, usa
 ```
 
 https://gist.github.com/11joao44/64f59bf2df50062818ef0086534be263
+Localhost: http://localhost:8000/bookstore/v1/product/
+
+acessa banco de dados via terminal local
+
+docker-compose exec db psql -U bookstore_dev -d bookstore_dev_db
+\dt pra verificar todas as tabelas da banco de dados
