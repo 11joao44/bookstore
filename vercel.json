@@ -1,16 +1,26 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "serverless/index.py",
-        "use": "@vercel/python"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "serverless/index.py"
-      }
-    ]
+  "version": 2,
+  "builds": [
+    {
+      "src": "Dockerfile",
+      "use": "@vercel/docker"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ],
+  "env": {
+    "SECRET_KEY": "@secret_key",
+    "DEBUG": "1",
+    "DJANGO_ALLOWED_HOSTS": "bookstore-iota-ten.vercel.app 127.0.0.1 localhost",
+    "SQL_ENGINE": "django.db.backends.postgresql",
+    "SQL_DATABASE": "bookstore_dev_db",
+    "SQL_USER": "bookstore_dev",
+    "SQL_PASSWORD": "bookstore_dev",
+    "SQL_HOST": "db",
+    "SQL_PORT": "5432"
   }
-  
+}

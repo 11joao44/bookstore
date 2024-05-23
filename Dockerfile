@@ -57,4 +57,4 @@ COPY . /app/
 EXPOSE 8000
 
 # Comando para ativar o ambiente virtual e iniciar o servidor Django
-CMD ["/bin/bash", "-c", "source /opt/pysetup/.venv/bin/activate && python manage.py runserver localhost:8000/bookstore/v1/product/"]
+CMD ["/bin/bash", "-c", "source /opt/pysetup/.venv/bin/activate && python manage.py runserver 0.0.0.0:8000"]
