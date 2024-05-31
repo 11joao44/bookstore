@@ -1,9 +1,13 @@
 {
   "version": 2,
+  "builds": [{
+        "src": "bookstore/wsgi.py",
+        "use": "@vercel/python"
+    }],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/"
+      "dest": "bookstore/wsgi.py"
     }
   ],
   "env": {
@@ -18,3 +22,4 @@
     "SQL_PORT": "5432"
   }
 }
+

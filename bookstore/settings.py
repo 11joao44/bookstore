@@ -25,7 +25,7 @@ DEBUG = True
 
 DEFAULT_CHARSET = 'utf-8'
 
-ALLOWED_HOSTS = ['bookstore-iota-ten.vercel.app', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['.vercel.app', '.aws.neon.tech', '127.0.0.1', 'localhost']
 
 # Application definition
 
@@ -90,7 +90,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -154,6 +153,6 @@ SECRET_KEY = "1501",
 
 DEBUG = int(os.environ.get("DEBUG", default=0))
 
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "bookstore-iota-ten.vercel.app 127.0.0.1 localhost").split(" ")
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", ".vercel.app .aws.neon.tech 127.0.0.1 localhost").split(" ")
 
-CSRF_TRUSTED_ORIGINS = ['https://bookstore-iota-ten.vercel.app']
+CSRF_TRUSTED_ORIGINS = ['.vercel.app']
