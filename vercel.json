@@ -9,7 +9,7 @@
   "env": {
     "SECRET_KEY": "1501",
     "DEBUG": "1",
-    "DJANGO_ALLOWED_HOSTS": "bookstore-iota-ten.vercel.app 127.0.0.1 localhost",
+    "DJANGO_ALLOWED_HOSTS": ".vercel.app .aws.neon.tech 127.0.0.1 localhost",
     "SQL_ENGINE": "django.db.backends.postgresql",
     "SQL_DATABASE": "bookstore_dev_db",
     "SQL_USER": "bookstore_dev",
