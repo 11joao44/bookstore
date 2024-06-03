@@ -150,7 +150,6 @@ pycodestyle = ">=2.11.0,<2.12.0"
 pyflakes = ">=3.2.0,<3.3.0"
 
 [[package]]
-<<<<<<< HEAD
 name = "gitdb"
 version = "4.0.11"
 description = "Git Object Database"
@@ -181,7 +180,6 @@ gitdb = ">=4.0.1,<5"
 [package.extras]
 doc = ["sphinx (==4.3.2)", "sphinx-autodoc-typehints", "sphinx-rtd-theme", "sphinxcontrib-applehelp (>=1.0.2,<=1.0.4)", "sphinxcontrib-devhelp (==1.0.2)", "sphinxcontrib-htmlhelp (>=2.0.0,<=2.0.1)", "sphinxcontrib-qthelp (==1.0.3)", "sphinxcontrib-serializinghtml (==1.1.5)"]
 test = ["coverage[toml]", "ddt (>=1.1.1,!=1.4.3)", "mock", "mypy", "pre-commit", "pytest (>=7.3.1)", "pytest-cov", "pytest-instafail", "pytest-mock", "pytest-sugar", "typing-extensions"]
-
 
 [[package]]
 name = "iniconfig"
@@ -374,8 +372,4 @@ brotli = ["Brotli"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12.2"
-<<<<<<< HEAD
 content-hash = "b41f12554dc9143a158beeba7ab42c5c56b644ec298b2f699d0815211f6a9145"
-=======
-content-hash = "2a2f2af415f047e9df95973093e5b1c928bf5da1c40148f30bb4f8afbe16e686"
->>>>>>> 8e9e97bc353373775b9b238c9bfc93b900c73e76
