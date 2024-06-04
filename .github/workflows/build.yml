@@ -31,5 +31,7 @@ jobs:
       run: poetry install
     - name: Set environment variables
       run: echo "DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1" >> $GITHUB_ENV
+    - name: Set Django settings module
+      run: export DJANGO_SETTINGS_MODULE=bookstore.settings
     - name: Run tests
       run: poetry run python manage.py test
