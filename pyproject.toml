@@ -6,7 +6,7 @@ authors = ["João Pedro"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12.2"
+python = "^3.10.5"
 pytest = "^8.2.0"
 psycopg2 = "^2.9.9"
 factory-boy = "^3.3.0"
