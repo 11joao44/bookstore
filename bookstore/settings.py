@@ -20,11 +20,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "11joao44.pythonanywhere.com"]
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -154,6 +149,6 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 SECRET_KEY = "1501",
 
-DEBUG = int(os.environ.get("DEBUG", default=0))
+DEBUG = True
 
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost 127.0.0.1").split(" ")
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '11joao44.pythonanywhere.com']
